@@ -1,0 +1,15 @@
+
+h1 {color:Black;font-family: helvetica, sans-serif;font-size: 175%;}
+
+#box {color:black;font-family: arial;font-size: 120%;width:20em;opacity:0.7;margin-left:3em}
+
+#file {margin-left: 2em;font-family: Monaco;font-size: 80%;width: 60em;opacity:0.9;padding-left:1em;padding-top:1em;padding-bottom:1em;}
+
+#shortfile {margin-left: 1em;font-family: Monaco;font-size: 80%;width: 15em;opacity:0.9;padding-left:1em;padding-top:1em;padding-bottom:1em;}
+
+#shortfile2 {margin-left: 2em;font-family: Monaco;font-size: 80%;width: 40em;opacity:0.9;padding-left:1em;padding-top:1em;padding-bottom:1em;}
+
+#sample {background-color:Gainsboro;font-family:Monaco;font-size: 130%}
+
+body {color:Gray; font-family: helvetica, sans-serif; font-size: 150%; background-image:url('frank.jpg')}
+

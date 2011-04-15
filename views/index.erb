@@ -1,0 +1,80 @@
+<h1>Welcome to Sinatra For Complete @#$% Noobs!</h1><br>
+This will show you how to deploy a Sinatra App through a concrete sequential, unthinking, rote process. <br>Repeat this ten times with minor modifications/alterations and then dig deep back into the books to see how things work.<br>
+<br>
+A quick note. When you see the $, it means terminal entry. don't type the dollar sign. just what follows and hit Enter. Also, here we're using Textmate. So if you're using a different text editor, where you see me typing 'mate', use YOUR terminal shortcut command for firing up your text editor.<br>
+After each step, save your work.<br>
+<ol>
+  <li>Fire up your terminal and do the following:</li>
+    <ul>
+       <li>Create an empty directory called, drivingsinatra. You can do this with the finder OR by typing <br><div id="box">$ mkdir drivingsinatra</div></li>
+       <li>Go into that directory. Terminal command is cd driv (then hit tab to autocomplete and hit enter)</li>
+       <li>Now enter<div id="box">$ mkdir public <br>$ mkdir views </div><br> You're creating a public folder and a views folder.</li></ul>
+<br>
+  <li>Fire up your text editor! With TextMate you do, <div id="box">$ mate app.rb</div><br>
+DO NOT THINK! Type the following:
+    <blockquote>
+    <div id="shortfile"> require 'sinatra'<br>
+	  require 'erb'<br><br>
+	  get '/' do<br>
+	  <p style="margin-left:25px;margin-top:-5px;">erb :index</p>
+	  <p style="margin-top:-30px;">end</p>
+    </div>
+    </blockquote>		    
+  <li>Now from your terminal do, <div id="box">$ mate views/index.erb</div><br>(go into your views folder and create an index.erb file.)<br>THOUGHTLESSLY TYPE THE FOLLOWING!<br>
+	<div id="file">
+	&lt;form id="css_form_id" method="get" action="/the_resulting_action_from_clicking_submit"&gt;<br>
+	&lt;input id="css_form_text_field_1" type="text" name="this_is_what_gets_fed_into_params1"/&gt;<br>
+	&lt;input id="css_form_text_field_2" type="text" name="this_is_what_gets_fed_into_params2"/&gt;<br>
+	&lt;input id="css_form_text_field_3" type="text" name="this_is_what_gets_fed_into_params3"/&gt;<br>
+	&lt;input id="css_button_id" type="submit" value="Here_I_can_change_the_name_of_the_button!"/&gt;<br>
+	&lt;/form&gt;<br>
+    </div>	
+  <li>Go back to your app.rb file and add this to the bottom.<br>
+	<div id="shortfile2">
+		get '/the_resulting_action_from_clicking_submit' do<br>
+		<p style="margin-left:25px;margin-top:-3px;">@instance_variable1 = params["this_is_what_gets_fed_into_params1"]</p>
+		<p style="margin-left:25px;margin-top:-15px;">@instance_variable2 = params["this_is_what_gets_fed_into_params2"]</p>
+		<p style="margin-left:25px;margin-top:-15px;">@instance_variable3 = params["this_is_what_gets_fed_into_params3"]</p>
+		<p style="margin-left:25px;margin-top:-15px;">erb :result</p>
+		<p style="margin-top:-15px;">end</p>
+	</div>
+  <li>Now from your terminal do, <div id="box">$ mate views/layout.erb</div><br>(go into your views folder and create an layout.erb file.)<br>
+    <div id="shortfile2">
+	  <p style="margin-left:5px;margin-top:-3px;">&lt;!DOCTYPE html&gt;</p>
+	    <p style="margin-left:5px;margin-top:-15px;">&lt;head&gt;</p>
+		  <p style="margin-left:35px;margin-top:-15px;">&lt;title> driving sinatra for noobs &lt;/title&gt;</p>
+		  <p style="margin-left:55px;margin-top:-15px;">&lt;link rel="stylesheet" href="name_of_my_css_file.css"&lt;/link&gt;</p>
+	      <p style="margin-left:35px;margin-top:-15px;">&lt;/title&gt;</p>
+	    <p style="margin-left:5px;margin-top:-15px;">&lt;/head&gt;</p>
+	  <p style="margin-left:5px;margin-top:-15px;">&lt;body&gt;</p>
+	    <p style="margin-left:35px;margin-top:-15px;">&lt;%= yield %&gt;</p>
+	  <p style="margin-left:5px;margin-top:-15px;">&lt;/body&gt;</p>
+	<p style="margin-left:5px;margin-top:-15px;">&lt;/html&gt;</p>
+    </div>
+  <li>This won't work unless we have a result.erb file. Let's do it now. <div id="box">$ mate views/result.erb</div><br>(go into your views folder and create a result.erb file.)<br>
+    <div id="shortfile2">
+	  	&lt;%= @instance_variable1 %&gt; <br>
+		&lt;%= @instance_variable2 %&gt; <br>
+		&lt;%= @instance_variable3 %>&gt; <br>
+    </div>	
+  <li>Time for a quick css file. <div id="box">$ mate public/name_of_my_css_file.css</div><br>(go into your public folder and create a name_of_my_css_file.css file.)<br>
+	<div id="shortfile2">
+		body {background-color:Gainsboro;font-family:Monaco;font-size: 130%}
+	</div>
+  <li>Things should be more or less put together. from the terminal, <div id="box">$ ruby app.rb</div><br> and the following should pop up!
+	<div id="box">$ == Sinatra/1.2.2 has taken the stage on 4567 for development with backup from Thin
+	  &gt;&gt; Thin web server (v1.2.11 codename Bat-Shit Crazy)
+	  &gt;&gt; Maximum connections set to 1024
+	  &gt;&gt; Listening on 0.0.0.0:4567, CTRL+C to stop
+	</div><br>
+  <li>Go to your browser and give http://0.0.0.0:4567 a try. You should see:<br>
+	<div id="sample">
+      	<form id="css_form_id" method="get" action="/the_resulting_action_from_clicking_submit">
+		<input id="css_form_text_field_1" type="text" name="this_is_what_gets_fed_into_params1">
+		<input id="css_form_text_field_2" type="text" name="this_is_what_gets_fed_into_params2">
+		<input id="css_form_text_field_3" type="text" name="this_is_what_gets_fed_into_params3">
+		<input id="css_button_id" type="submit" value="Here_I_can_change_the_name_of_the_button!">
+		</form>
+    </div>	
+	(and note... this form actually should work, passing the string values into the next page that loads.)
+</ol>
