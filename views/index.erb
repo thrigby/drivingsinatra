@@ -1,4 +1,6 @@
-<h1>Welcome to Sinatra For Complete @#$% Noobs!</h1><br>
+<h1>Welcome to</h1><br>
+<h2><p style="margin-left:25px;margin-top:-140px;margin-bottom:-80px">Sinatra</h2></p>
+<h1>For Complete @#$% Noobs!</h1><br>
 This will show you how to deploy a Sinatra App through a concrete sequential, unthinking, rote process. <br>Repeat this ten times with minor modifications/alterations and then dig deep back into the books to see how things work.<br>
 <br>
 A quick note. When you see the $, it means terminal entry. don't type the dollar sign. just what follows and hit Enter. Also, here we're using Textmate. So if you're using a different text editor, where you see me typing 'mate', use YOUR terminal shortcut command for firing up your text editor.<br>
@@ -17,15 +19,15 @@ DO NOT THINK! Type the following:
 	  require 'erb'<br><br>
 	  get '/' do<br>
 	  <p style="margin-left:25px;margin-top:-5px;">erb :index</p>
-	  <p style="margin-top:-30px;">end</p>
+	  <p style="margin-top:-20px;">end</p>
     </div>
     </blockquote>		    
   <li>Now from your terminal do, <div id="box">$ mate views/index.erb</div><br>(go into your views folder and create an index.erb file.)<br>THOUGHTLESSLY TYPE THE FOLLOWING!<br>
 	<div id="file">
 	&lt;form id="css_form_id" method="get" action="/the_resulting_action_from_clicking_submit"&gt;<br>
-	&lt;input id="css_form_text_field_1" type="text" name="this_is_what_gets_fed_into_params1"/&gt;<br>
-	&lt;input id="css_form_text_field_2" type="text" name="this_is_what_gets_fed_into_params2"/&gt;<br>
-	&lt;input id="css_form_text_field_3" type="text" name="this_is_what_gets_fed_into_params3"/&gt;<br>
+	&lt;input id="css_form_text_field_1" type="text" name="this_is_what_gets_fed_into_params1"/&gt;Name&lt;br&gt;<br>
+	&lt;input id="css_form_text_field_2" type="text" name="this_is_what_gets_fed_into_params2"/&gt;Species&lt;br&gt;<br>
+	&lt;input id="css_form_text_field_3" type="text" name="this_is_what_gets_fed_into_params3"/&gt;Power&lt;br&gt;<br>
 	&lt;input id="css_button_id" type="submit" value="Here_I_can_change_the_name_of_the_button!"/&gt;<br>
 	&lt;/form&gt;<br>
     </div>	
@@ -59,7 +61,11 @@ DO NOT THINK! Type the following:
     </div>	
   <li>Time for a quick css file. <div id="box">$ mate public/name_of_my_css_file.css</div><br>(go into your public folder and create a name_of_my_css_file.css file.)<br>
 	<div id="shortfile2">
-		body {background-color:Gainsboro;font-family:Monaco;font-size: 130%}
+		#css_form_id {color:black;<br>background-color:Silver;<br>font-size:120%;<br>font-family:Monaco;<br>border-style:solid;<br>border-radius:.5em;<br>width:23em;<br>opacity:.75;}<br><br>
+
+		#css_form_text_field {color:blue;<br>background-color:white;<br>font-size:110%;<br>font-family:Monaco;<br>border-style:double;<br>border-radius:.3em;<br>opacity:.5;}<br><br>
+
+		#css_button {margin-left: 4em;<br>color:black;<br>background-color:LightGray;<br>font-size:80%;<br>font-family:Arial;<br>border-style:raised;<br>border-width:.2em;<br>border-radius:.3em;<br>border-color:black;<br>opacity:.7;}
 	</div>
   <li>Things should be more or less put together. from the terminal, <div id="box">$ ruby app.rb</div><br> and the following should pop up!
 	<div id="box">$ == Sinatra/1.2.2 has taken the stage on 4567 for development with backup from Thin
@@ -70,10 +76,10 @@ DO NOT THINK! Type the following:
   <li>Go to your browser and give http://0.0.0.0:4567 a try. You should see:<br>
 	<div id="sample">
       	<form id="css_form_id" method="get" action="/the_resulting_action_from_clicking_submit">
-		<input id="css_form_text_field_1" type="text" name="this_is_what_gets_fed_into_params1">
-		<input id="css_form_text_field_2" type="text" name="this_is_what_gets_fed_into_params2">
-		<input id="css_form_text_field_3" type="text" name="this_is_what_gets_fed_into_params3">
-		<input id="css_button_id" type="submit" value="Here_I_can_change_the_name_of_the_button!">
+		<input id="css_form_text_field" type="text" name="this_is_what_gets_fed_into_params1"/>Name<br>
+		<input id="css_form_text_field" type="text" name="this_is_what_gets_fed_into_params2"/>Species<br>
+		<input id="css_form_text_field" type="text" name="this_is_what_gets_fed_into_params3"/>Power<br>
+		<input id="css_button" type="submit" value="Here_I_can_change_the_name_of_the_button!"/>
 		</form>
     </div>	
 	(and note... this form actually should work, passing the string values into the next page that loads.)
