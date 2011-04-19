@@ -1,6 +1,7 @@
 
 h1 {color:Black;font-family: helvetica, sans-serif;font-size: 200%;}
 h2 {color:Black;font-family:"Times New Roman",Georgia,Serif;font-size:400%;}
+h3 {color:Black;font-family:"Times New Roman",Georgia,Serif;font-size:130%;}
 
 #css_form_id {color:black;background-color:Silver;font-size:120%;font-family:Monaco;border-style:solid;border-radius:.5em;width:23em;opacity:.75;}
 
@@ -19,4 +20,7 @@ h2 {color:Black;font-family:"Times New Roman",Georgia,Serif;font-size:400%;}
 #shortfile2 {margin-left: 2em;font-family: Monaco;font-size: 80%;width: 40em;padding-left:1em;padding-top:1em;padding-bottom:1em;}
 
 body {color:Gray; font-family: helvetica, sans-serif; font-size: 150%; background-image:url('frank.jpg')}
+
+#body_two {color:Gray; font-family: helvetica, sans-serif; font-size: 150%; background-image:url('frank2.jpg')}
+
 

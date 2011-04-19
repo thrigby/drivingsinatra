@@ -1,3 +1,75 @@
-<%= @instance_variable1 %> <br>
-<%= @instance_variable2 %> <br>
-<%= @instance_variable3 %> <br>
+<h3>Congratulations! You just filled out a simple @#$% form!</h3>
+<body id="body_two">
+and passed the variables to this page!<br>
+name: <b><%= @instance_variable1 %> <br></b>
+species: <b><%= @instance_variable2 %> <br></b>
+power: <b><%= @instance_variable3 %> <br></b>
+and, behind the scenes, we evaluated those fields and gave you a Mafia name!<br>
+Your Mafia name is:<br>
+<h2><%= @z.capitalize + " " + @zz.capitalize + " " + @zzz.capitalize + "!" %></h2>
+<br>
+So... You're brimming with jealousy. But in about three minutes, you too will have this power of making stupid mafia names.<br>
+<ol>
+	<li>Let's  go back to the app.rb file and do something with those fields.
+		<p style="margin-left:15px;"> look where I put the arrows. Keeping your back straight, eyes forward, hands in correct ergonomic position, add the three lines I've indicated in bold.</p>
+		<p style="margin-left:20px;margin-top:-15px;">get '/the_resulting_action_from_clicking_submit' do </p>
+		<p style="margin-left:45px;margin-top:-15px;">@instance_variable1 = params["this_is_what_gets_fed_into_params1"]</p>
+		<p style="margin-left:45px;margin-top:-15px;">@instance_variable2 = params["this_is_what_gets_fed_into_params2"]</p>
+		<p style="margin-left:45px;margin-top:-15px;">@instance_variable3 = params["this_is_what_gets_fed_into_params3"].to_i</p>
+		<b><p style="margin-left:45px;margin-top:-15px;">grab_name_one</p></b>
+		<b><p style="margin-left:45px;margin-top:-15px;">grab_name_two</p></b>
+		<b><p style="margin-left:45px;margin-top:-15px;">grab_name_three</p></b>
+		<p style="margin-left:45px;margin-top:-15px;">erb :result</p>
+		<p style="margin-left:20px;margin-top:-15px;">end</p>
+	<li>Now get ready for some serious thoughtless typing. Below that method, you are adding three methods to your app.rb file.</li>
+	    <p style="margin-left:20px;">def grab_name_one</p>
+	    <p style="margin-left:60px;margin-top:-15px;">name_one_length = @instance_variable1.length</p>
+	    <p style="margin-left:80px;margin-top:-15px;">if name_one_length > 10</p>
+	    <p style="margin-left:100px;margin-top:-15px;">x = rand(10)</p>
+	    <p style="margin-left:80px;margin-top:-15px;">else</p>
+	    <p style="margin-left:100px;margin-top:-15px;">x = rand(name_one_length)</p>
+	    <p style="margin-left:80px;margin-top:-15px;">end</p>
+	    <p style="margin-left:60px;margin-top:-15px;">y = ["tiny", "tony", "bruno", "sam", "gentle", "pizza-face", "franky", "smiley", "the don", "toothpick"]</p>
+	    <p style="margin-left:60px;margin-top:-15px;">@z = y[x]</p>
+	    <p style="margin-left:20px;margin-top:-15px;">end</p>
+<br>
+	    <p style="margin-left:20px;margin-top:-15px;">def grab_name_two</p>
+	    <p style="margin-left:60px;margin-top:-15px;">name_one_length = @instance_variable2.length</p>
+	    <p style="margin-left:80px;margin-top:-15px;">if name_one_length > 10</p>
+	    <p style="margin-left:100px;margin-top:-15px;">x = rand(10)</p>
+	    <p style="margin-left:80px;margin-top:-15px;">else</p>
+	    <p style="margin-left:100px;margin-top:-15px;">x = rand(name_one_length)</p>
+	    <p style="margin-left:80px;margin-top:-15px;">end</p>
+	    <p style="margin-left:60px;margin-top:-15px;">y = ["'toes'", "'the bagel'", "'tickles'", "'the telephono polo'", "'the twitcher'", "'crap foot'", "'big lips'", "'the plumber'", "'the master'", "'joe joe'"]</p>
+	    <p style="margin-left:60px;margin-top:-15px;">@zz = y[x]</p>
+	    <p style="margin-left:20px;margin-top:-15px;">end</p>
+<br>
+	    <p style="margin-left:20px;margin-top:-15px;">def grab_name_three</p>
+	    <p style="margin-left:40px;margin-top:-15px;">if @instance_variable3 > 10</p>
+	    <p style="margin-left:60px;margin-top:-15px;">x = rand(10)</p>
+	    <p style="margin-left:40px;margin-top:-15px;">else</p>
+	    <p style="margin-left:60px;margin-top:-15px;">x = rand(@instance_variable3)</p>
+	    <p style="margin-left:40px;margin-top:-15px;">end</p>
+	    <p style="margin-left:40px;margin-top:-15px;">y = ["gravano", "corozzo", "anastasio", "manfredi", "gambini", "gambino", "blondo", "zampeli", "the don", "pistachio"]</p>
+	    <p style="margin-left:40px;margin-top:-15px;">@zzz = y[x]</p> 
+	    <p style="margin-left:20px;margin-top:-15px;">end</p>
+	<li> Now we update our result.erb file. Make it look like this. <br>
+		<p style="margin-left:20px;">Congratulations! You just filled out a simple @#$% form!&lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">&lt;body id="body_two"&gt;&lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">and passed the variables to this page!&lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">name: &lt;%= @instance_variable1 %&gt; &lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">species:&lt;%= @instance_variable2 %&gt; &lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">power:&lt;%= @instance_variable3 %&gt; &lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">Your Mafia name is:&lt;br&gt;</p>
+		<p style="margin-left:20px;margin-top:-15px;">&lt;h2&gt;&lt;%= @z.capitalize + " " + @zz.capitalize + " " + @zzz.capitalize + "!" %&gt;&lt;/h2&gt;</p>
+	<li> Before we can have our fun we need to add some stuff to 'name_of_my_css_file.css'<br>
+	    <p style="margin-left:20px;">Jam this in the css file somewhere.</p>
+	    <p style="margin-left:20px;margin-top:-15px;">#body_two {color:Gray; font-family: helvetica, sans-serif; font-size: 150%;}</p>
+	    <i><p style="margin-left:20px;margin-top:-15px;">This too.</p></i>
+	    <p style="margin-left:20px;margin-top:-15px;">h2 {color:Black;font-family:"Times New Roman",Georgia,Serif;font-size:400%;}</p>
+<br>
+    <li> Now back to the terminal, <b>ruby app.rb</b> and watch the magic.
+	</li>		
+</ol>
+
+</body>
