@@ -1,7 +1,7 @@
 <h1>Welcome to</h1><br>
 <h2><p style="margin-left:25px;margin-top:-140px;margin-bottom:-80px">Sinatra</h2></p>
-<h1>For Complete @#$% Noobs!</h1><br>
-This will show you how to deploy a Sinatra App through a concrete sequential, unthinking, rote process. <br>Repeat this ten times with minor modifications/alterations and then dig deep back into the books to see how things work.<br>
+<h1>for noobs</h1><br>
+serious bare-bones css, html, ajax, jquery design pattern. do this one over and over until it is down by rote and the fundamentals are grok'd<br>
 <br>
 A quick note. When you see the $, it means terminal entry. don't type the dollar sign. just what follows and hit Enter. Also, here we're using Textmate. So if you're using a different text editor, where you see me typing 'mate', use YOUR terminal shortcut command for firing up your text editor.<br>
 <br>
@@ -86,5 +86,16 @@ DO NOT THINK! Type the following:
 		</form>
     </div>	
 	(and note... this form actually should work, passing the string values into the next page that loads.)<br>
-	I've gone ahead and made this little form functional, so enter some values into the fields and click on the button to see part two of the tutorial, where we will be making a stupid mafia name generator!!!
-</ol>
+	I've gone ahead and made this little form functional, so enter some values into the fields and click on the button or just hit Enter to see part two of the tutorial, where we will be making a stupid mafia name generator.
+
+<div id="test">
+</div>
+<script>
+$(function() {
+	$("#css_form_text_field").focus();
+	$("#css_button").click(function(){
+		$("#test").load("/the_resulting_action_from_clicking_submit", $("#css_form_id").serialize());
+		return false;
+	})
+})
+</script>

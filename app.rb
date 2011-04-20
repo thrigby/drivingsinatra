@@ -12,7 +12,7 @@ get '/the_resulting_action_from_clicking_submit' do
   grab_name_one
   grab_name_two
   grab_name_three
-  erb :result
+  erb :result, :layout => !request.xhr?
 end
 
 def grab_name_one
